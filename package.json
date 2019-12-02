@@ -1,0 +1,7 @@
+{
+  "name": "Url-Shortener",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Prince Goziem <princegoziem@gmail.com>",
+  "license": "MIT"
+}
