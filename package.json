@@ -1,11 +1,11 @@
 {
-  "name": "Url-Shortener",
+  "name": "url-shortener",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Prince Goziem <princegoziem@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --watch server --exec babel-node -- src/app.js"
+    "start:dev": "nodemon --watch src --exec babel-node -- src/app.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
@@ -22,5 +22,10 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "config": "^3.2.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   }
 }
