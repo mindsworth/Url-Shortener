@@ -22,6 +22,7 @@
 		"implicit-arrow-linebreak": ["error", "below"],
 		"prettier/prettier": ["error"],
 		"class-methods-use-this": "off",
-		"consistent-return": ["error", { "treatUndefinedAsUnspecified": false }]
+		"consistent-return": ["error", { "treatUndefinedAsUnspecified": false }],
+		"func-names": ["error", "never"]
 	}
 }

@@ -26,6 +26,8 @@
   "dependencies": {
     "config": "^3.2.4",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13",
+    "q": "^1.5.1"
   }
 }
