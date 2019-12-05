@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 import config from 'config'
 import q from 'q'
 import mongoose from 'mongoose'
 
 class Setup {
 	/**
-	 * This is to initialize setup
+	 * This will initialize setup
 	 */
 	static initialize() {
 		this.setupMongoose()
@@ -26,7 +27,7 @@ class Setup {
 		mongoose.connection.on('disconnected', function() {
 			console.log('Mongoose connection to mongodb shell disconnected')
 		})
-		// mongoose.set('debug', true);
+		mongoose.set('debug', true)
 		mongoose.connect(config.get('db.url'), {
 			useUnifiedTopology: true,
 			useNewUrlParser: true
