@@ -9,6 +9,10 @@ class Setup {
 	 */
 	static initialize() {
 		this.setupMongoose()
+
+		const apiVersion = Array.from(config.get('api.versions'))
+		console.log('apiVersion', typeof apiVersion)
+		this.setupApiVersion(apiVersion.pop())
 	}
 
 	/**
@@ -32,6 +36,15 @@ class Setup {
 			useUnifiedTopology: true,
 			useNewUrlParser: true
 		})
+	}
+
+	/**
+	 * @param {Number} version The configuration object
+	 * This will setup default api version.
+	 */
+	static setupApiVersion(version) {
+		console.log('Setting api version ', version)
+		process.env.API_VERSION = `v${version}`
 	}
 }
 

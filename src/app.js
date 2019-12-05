@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import http from 'http'
 import express from 'express'
 import config from 'config'
 import logger from 'morgan'
@@ -20,18 +21,13 @@ app.use(logger('dev'))
 routes(router)
 
 const prefix = config.get('api.prefix')
+console.log('prefix====>', prefix)
 app.use(prefix, router)
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-	const err = new Error('Not Found')
-	err.status = 404
-	next(err)
-})
 
 app.set('port', config.get('app.port'))
 const PORT = app.get('port')
-app.listen(PORT, () => {
+const server = http.createServer(app)
+server.listen(PORT, () => {
 	console.log(`Application listening on ${config.get('app.baseUrl')}`)
 	console.log(`Environment => ${config.util.getEnv('NODE_ENV')}`)
 })

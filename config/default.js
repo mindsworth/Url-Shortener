@@ -8,7 +8,8 @@ module.exports = {
 		baseUrl: `http://localhost:${PORT}`
 	},
 	api: {
-		prefix: '^/api/v[1-9]/[a-zA-Z*]{2}'
+		prefix: '^/api/v[1-9]',
+		versions: [1]
 	},
 	db: {
 		url: process.env.DB_URL
