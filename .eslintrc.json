@@ -25,6 +25,7 @@
 		"consistent-return": ["error", { "treatUndefinedAsUnspecified": false }],
 		"func-names": ["error", "never"],
 		"no-underscore-dangle": "off",
-		"no-param-reassign": "off"
+		"no-param-reassign": "off",
+		"import/no-dynamic-require": "off"
 	}
 }
