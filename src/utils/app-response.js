@@ -17,7 +17,6 @@ class AppResponse {
 	 * @return {Object} The success response object
 	 */
 	static format(meta, data = null) {
-		console.log('here i am =====>>>>>')
 		const response = {}
 		response._meta = meta
 

@@ -22,8 +22,11 @@ app.use(logger('dev'))
 
 routes(router)
 
+const prefix = config.get('api.prefix')
+app.use(prefix, router)
+
 // catch 404 and forward to error handler
-app.use('*', (req, res, next) => {
+app.use((req, res, next) => {
 	const err = new AppError('Not Found', 404)
 	next(err)
 })
@@ -31,9 +34,6 @@ app.use('*', (req, res, next) => {
 // development error handler
 // will print stacktrace
 app.use(errorHandler)
-
-const prefix = config.get('api.prefix')
-app.use(prefix, router)
 
 app.set('port', config.get('app.port'))
 const PORT = app.get('port')

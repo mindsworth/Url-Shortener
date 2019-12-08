@@ -17,6 +17,7 @@ export default (error, req, res, next) => {
 		const err = error.format()
 		const { code } = err
 		meta.status_code = code
+		meta.success = false
 		meta.error = { code, message: err.message }
 		if (err.messages) {
 			meta.error.messages = err.messages
@@ -25,7 +26,6 @@ export default (error, req, res, next) => {
 			meta.error.type = err.type
 		}
 	} else {
-		Log.notice('Here i am now AppError=====>>>>>', error instanceof AppError)
 		const code = 500
 		meta.status_code = code
 		meta.error = {
